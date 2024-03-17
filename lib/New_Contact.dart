@@ -50,7 +50,10 @@ class _CreateNewState extends State<CreateNew> {
                     );
                   }
                 },
-                child: const Text("save"))
+                child: const Text(
+                  "save",
+                  style: TextStyle(color: Colors.lightGreen, fontSize: 20),
+                ))
           ],
         ),
         body: Stack(children: [
@@ -91,7 +94,11 @@ class _CreateNewState extends State<CreateNew> {
                       color: Colors.greenAccent[700],
                       size: 40,
                     ),
-                    title: const Text("saving to"),
+                    title: const Text(
+                      "saving to",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    ),
                     subtitle: const Text("MTNGH"),
                     trailing: Icon(
                       Icons.keyboard_arrow_down,
@@ -148,6 +155,7 @@ class _CreateNewState extends State<CreateNew> {
                         SizedBox(
                           width: 240,
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextField(
                                 controller: fnController,
@@ -165,20 +173,44 @@ class _CreateNewState extends State<CreateNew> {
                                 decoration:
                                     const InputDecoration(hintText: "Phone"),
                               ),
-                              TextField(
-                                controller: mobileController,
-                                decoration:
-                                    const InputDecoration(hintText: "Mobile"),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 150,
+                                    child: TextField(
+                                      controller: mobileController,
+                                      decoration: const InputDecoration(
+                                          hintText: "Mobile",
+                                          suffixIcon: Icon(
+                                            Icons.arrow_drop_down,
+                                            size: 40,
+                                            color: Colors.lightGreen,
+                                          )),
+                                    ),
+                                  ),
+                                ],
                               ),
                               TextField(
                                 controller: emailController,
                                 decoration:
                                     const InputDecoration(hintText: "Email"),
                               ),
-                              TextField(
-                                controller: homeController,
-                                decoration:
-                                    const InputDecoration(hintText: "Home"),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 150,
+                                    child: TextField(
+                                      controller: homeController,
+                                      decoration: const InputDecoration(
+                                          hintText: "Home",
+                                          suffixIcon: Icon(
+                                            Icons.arrow_drop_down,
+                                            size: 40,
+                                            color: Colors.lightGreen,
+                                          )),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -189,7 +221,20 @@ class _CreateNewState extends State<CreateNew> {
                           size: 40,
                         )
                       ],
-                    ))
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Center(
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text("MORE FIELDS",
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Colors.lightGreen,
+                            fontWeight: FontWeight.w400)),
+                  ),
+                )
               ],
             ),
           )

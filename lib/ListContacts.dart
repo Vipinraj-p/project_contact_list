@@ -20,8 +20,17 @@ class _ContactListState extends State<ContactList> {
                   borderRadius: BorderRadius.circular(60),
                   borderSide: BorderSide.none),
               hintText: "Search Contacts",
-              prefixIcon: const Icon(Icons.search),
-              suffixIcon: const Icon(Icons.mic_none_rounded),
+              prefixIcon: const Icon(
+                Icons.search,
+                color: Colors.lightGreen,
+              ),
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.mic_none_rounded,
+                  color: Colors.lightGreen,
+                ),
+              ),
             ),
           ),
           actions: [
